@@ -1,2 +1,2 @@
 # My Web
-It works!
+My web works!
