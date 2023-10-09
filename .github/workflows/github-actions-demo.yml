@@ -1,13 +1,18 @@
 name: Demo schedule
 on: 
   schedule:
-    - cron: '15 * * * *'
+    - cron: '14 * * * *'
+
 jobs:
   test_schedule:
     runs-on: ubuntu-latest
     
-    steps:
-      - name: Update subtree
-        run: git subtree pull --squash --prefix=myweb_tree git@github.com:Nyanyi/my-web.git main -m "Updating the repository"
-      - name: Finishing the job
-        run: echo "🍏 This job's status is ${{ job.status }}."
+    steps: 
+    - name: Git checkout
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: '0'
+    - name: Update subtree
+      run: git subtree pull --squash --prefix=myweb_tree git@github.com:Nyanyi/my-web.git main -m "Updating the repository"
+    - name: Finishing the job
+      run: echo "🍏 This job's status is ${{ job.status }}."
