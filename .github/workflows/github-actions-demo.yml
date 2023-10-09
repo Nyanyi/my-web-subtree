@@ -1,14 +1,12 @@
 name: Demo schedule
 on: 
   schedule:
-    - cron: '55 * * * *'
+    - cron: '01 * * * *'
 jobs:
   test_schedule:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Every 15
-        run: echo "15"
       - name: Update subtree
         run: git subtree pull --squash --prefix=my-web-subtreegit@github.com:Nyanyi/my-web.git main -m "Updating the repository"
       - name: Finishing the job
