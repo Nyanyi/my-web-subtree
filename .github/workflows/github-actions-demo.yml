@@ -1,15 +1,15 @@
-name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+name: Demo schedule
 on: 
   schedule:
     - cron: '15 * * * *'
 jobs:
   test_schedule:
     runs-on: ubuntu-latest
+    
     steps:
       - name: Every 15
-      - run: echo "15"
+        run: echo "15"
       - name: Update subtree
-      - run: echo "Updating subtree"
-      - run: git subtree pull --squash --prefix=my-web-subtreegit@github.com:Nyanyi/my-web.git main -m "Updating the repository"
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+        run: git subtree pull --squash --prefix=my-web-subtreegit@github.com:Nyanyi/my-web.git main -m "Updating the repository"
+      - name: Finishing the job
+        run: echo "🍏 This job's status is ${{ job.status }}."
