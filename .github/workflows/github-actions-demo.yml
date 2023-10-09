@@ -1,7 +1,7 @@
 name: Demo schedule
 on: 
   schedule:
-    - cron: '14 * * * *'
+    - cron: '20 * * * *'
 
 jobs:
   test_schedule:
@@ -9,7 +9,7 @@ jobs:
     
     steps: 
     - name: Git checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
       with:
         fetch-depth: '0'
     - name: Update subtree
