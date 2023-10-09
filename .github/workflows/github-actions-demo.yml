@@ -1,7 +1,7 @@
 name: Demo schedule
 on: 
   schedule:
-    - cron: '5 * * * *'
+    - cron: '20 * * * *'
 
 jobs:
   test_schedule:
@@ -13,6 +13,6 @@ jobs:
       with:
         fetch-depth: '0'
     - name: Update subtree
-      run: git subtree pull --squash --prefix=myweb_tree git@github.com:Nyanyi/my-web.git main -m "Updating the repository"
+      run: git subtree pull --squash --prefix=myweb_tree https://github.com/Nyanyi/my-web.git main -m "Updating the repository"
     - name: Finishing the job
       run: echo "🍏 This job's status is ${{ job.status }}."
