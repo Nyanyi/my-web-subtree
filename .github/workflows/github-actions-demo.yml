@@ -1,7 +1,7 @@
 name: Demo schedule
 on: 
   schedule:
-    - cron: '20 * * * *'
+    - cron: '5 * * * *'
 
 jobs:
   test_schedule:
